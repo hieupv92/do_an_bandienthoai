@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0; font-size:12px; font-family:Arial; background:#e8f6fc;}
+.wapper{width:1016px; margin:0 auto;}
+.bgshadow{width:100%; float:left; border:#CCC 0px solid;background:#FFF; border-radius:25px}
+
+.search{width:1016px; height:150px; position:relative;}
+.search h1{margin:0; float:left; padding:45px 20px; color:#ff8b00; font-size:34px; text-transform:uppercase}
+.search .formsearch{position:absolute; top:50px; right:30px; width:485px; height:35px; border:#f6f7fb 3px solid;}
+.search .formsearch form{margin:0; padding:0; border:#c5ced7 1px solid;; width:483px; height:33px;}
+.search .formsearch form .keyword{border:0; padding:0; margin:0; float:left; width:382px; height:33px;
+border-right:#c5ced7 1px solid; color:#CCC;}
+.search .formsearch form .btnsearch{ width:100px; padding:8px 0px; float:left; height:33px; font-size:15px; font-weight:bold; text-align:center; color:#fff; border:0; margin:0; background:#F90; margin:0; cursor:pointer}
+
+
+
+.content1{width:1000px; margin:0 auto;}
+.content1 .boxleft1{margin:15px 0px 5px; float:left; width:200px;}
+.content1 .boxcol1{float:left; width:100%; margin-bottom:10px;}/*muốn tái sd sang cột bên phải*/
+.content1 .boxcol1 .boxhead1{background:url(../images/dbg.jpg); height:23px; border:#8bb0ca 1px solid; border-top-left-radius:2px; border-bottom-right-radius:2px;}/*border-top-left-radius để bo tròn*/
+.content1 .boxcol1 .boxhead1 p{margin:0px; padding:5px; color:#325b99; font-weight:bold; text-align:center}
+.content1 .boxcol1 .category1{margin:0px; padding:0px; float:left; width:198px;
+ border:#97bbd1 1px solid; border-top:0; border-bottom-left-radius:15px;border-bottom-right-radius:15px;}
+.content1 .boxcol1 .category1 li{width:196px; height:50px; list-style:none; position:relative; float:left;}
+.content1 .boxcol1 .category1 li a{float:left; padding:5px 10px; text-decoration:none; color:#0085a4;}
+.content1 .boxcol1 .category1 li img{float:left; padding-left:10px}
+.content1 .boxcol1 .category1 li ul{display:none; position:absolute; width:200px; left:150px; top:0;}
+.content1 .boxcol1 .category1 li ul li{ width:100%; height:30px; background:#FFF; border-bottom:#CCC 1px solid}
+.content1 .boxcol1 .category1 li a.title{margin-top:5px}
+.content1 .boxcol1 .category1 li:hover>a{color:#F00;}
+.content1 .boxcol1 .category1 li:hover>ul{display:block}
+
+
+.content1 .phai{margin:15px 0px 5px; float:right; width:790px;}
+.content1 .phai .noidungphai{border:#CCC 1px solid;}
+.btn1{background:#42a5e0; height:23px; border:0px; border-radius:15px; font-weight:bold; color:#FFF}
+.btn1:hover{background:#fcab11}
+.them{color:#0085a4; float:left; padding-left:10px; padding-bottom:10px; font-weight:bold; text-decoration:none}
+.xoamucchon{background:#42a5e0;float:right; margin-bottom:5px; height:23px; border:0px; border-radius:15px; font-weight:bold; color:#FFF}
+.xoamucchon:hover{background:#fcab11}
+
+.pageduoi{margin-left:10px; margin-top:10px; float:left}
+.pageduoi a{color:#F00; border:#CCC 1px solid; padding:0px 5px 0px 5px; margin:0px 2px 5px 0px; float:left; text-decoration:none}
+.pageduoi a.active{color:#00F}
+.tenthongso{color:#0085a4;font-weight:bold; text-decoration:none}
+.text-input{border:#999 1px solid; border-radius:7px; height:25px; float:left;
+background:-webkit-gradient(linear,left top,left bottom,from(#E4E4E4),to(#fff));
+background:-moz-linear-gradient(top,#E4E4E4,#fff);
+background:-ms-linear-gradient(top,#E4E4E4,#fff);
+background:-o-linear-gradient(top,#E4E4E4,#fff);
+}
+.button-input{border:#136eb4 1px solid;
+color:#fff; font-weight:bold; 
+background:-webkit-gradient(linear,left top,right bottom,from(#136eb4),to(#09F));
+background:-moz-linear-gradient(top,#136eb4,#09F);
+background:-ms-linear-gradient(top,#136eb4,#09F);
+background:-o-linear-gradient(top,#136eb4,#09F);
+padding:3px 10px; border-radius:5px; cursor:pointer;text-shadow:1px 1px 2px #333;
+}
+.small-size{width:45%}
+.medium-size{width:75%}
+
+/* CSS border */
+table{border-top:#CCC 1px solid;border-left:#CCC 1px solid;}
+table.danhsach{text-align:center}
+tr.tieude{color:#0085a4; font-weight:bold; background:#f4f5f7}
+td{border-right:#CCC 1px solid;border-bottom:#CCC 1px solid}

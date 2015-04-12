@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login</title>
+<style>
+body{ margin:0; font-size:12px; font-family:Arial; background:#000;}
+.boxlogin{ width:200px; height:250px;box-shadow:0 0 30px #fff;border:#ccc 1px solid;
+border-radius:10px;padding:10px 40px; margin:150px auto;
+background:-webkit-gradient(linear,left top,left bottom,from(#FFF),to(#EEE));}
+</style>
+</head>
+<body>
+<div class="boxlogin">
+    <form action="index.php" method="post">
+        <h2>Đăng nhập quản trị</h2>
+        {if isset($thongbao)}<h4 style="color:#F00">{$thongbao}</h4>{/if}
+        <p>Tên đăng nhập</p>
+        <p><input type="text" name="txtuser"  /></p>
+        <p>Mật khẩu</p>
+        <p><input type="password" name="txtpass"  /></p>
+        <p><input type="submit" value="Đăng nhập" name="btnlog" /></p>
+    </form>
+</div>
+</body>
+</html>

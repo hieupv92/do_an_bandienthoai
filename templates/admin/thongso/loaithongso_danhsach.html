@@ -1,0 +1,29 @@
+<form id="form1" name="form1" method="post" action="">
+    <h1 align="center">Danh sách thông số sản phẩm</h1>
+    <a class="them" href="#">Thêm mới thông số sản phẩm</a>
+    <input type="submit" name="btnxoa" id="btnxoa" class="xoamucchon" value="Xóa mục chọn" 
+        onclick="return confirm('Bạn có chắc muốn xóa không?')"/>
+    <table width="100%" border="0" cellpadding="5" cellspacing="0" class="danhsach">
+      <tr class="tieude">
+        <td>ID</td>
+        <td>Tên thông số</td>
+        <td>Thao tác</td>
+        <td>
+          <input type="checkbox" id="cball" />
+       </td>
+      </tr>
+      {foreach $danhsach as $item}
+      <tr>
+        <td>{$item.loaithongso_id}</td>
+        <td><a class="tenthongso" href="?mod=thongso&act=thongso&idloai={$item.loaithongso_id}">{$item.loaithongso_ten}</a></td>
+        <td>
+        <a href="?mod=thongso&act=sua&idloai={$item.loaithongso_id}"><img src="../templates/admin/images/edit.png" /></a>
+        <a href="?mod=thongso&act=xoa&idloai={$item.loaithongso_id}"><img src="../templates/admin/images/delete.png" /></a>
+        </td>
+        <td>
+          <input type="checkbox" name="cbxoa[]" id="cbxoa" value="{$item.loaithongso_id}">  
+        </td>
+      </tr>
+      {/foreach}
+    </table>
+</form>

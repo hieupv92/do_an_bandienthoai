@@ -1,0 +1,164 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{margin:0; font-size:12px; font-family:Arial; background:#f6fbff}
+.wapper{width:1016px; margin:0 auto;}
+.bgshadow{width:100%; float:left; border:#CCC 0px solid;background:#FFF; border-radius:0px 0px 20px 20px}
+
+/* CSS FOR HEAD =========================================================================================*/
+header{width:100%;height:28px; background:url(../images/bghead.jpg);border-bottom:#cdcdcd 1px solid;}
+header .boxhead{width:1000px; margin:0 auto}
+header .boxhead p{margin:0; padding:6px; font-weight:bold; float:left} /* để cho thẻ p k chiếm 100% dùng float left*/
+header .boxhead ul{margin:0; padding:0px;float:right}
+header .boxhead ul li{ list-style:none;float:left; position:relative}/* vì là menu đa cấp nên dùng position:relative */
+header .boxhead ul li a{ font-weight:bold; text-decoration:none; float:left; padding:6px 15px; color:#136eb4}
+header .boxhead ul li ul{position:absolute; left:0; top:27px; width:160px; display:none; z-index:10}
+header .boxhead ul li ul li{ width:100%; background:url(../images/bghead.jpg)}
+header .boxhead ul li:hover>a{color:#fcab11}
+header .boxhead ul li:hover>ul{display:block}
+/* End head */
+
+/* CSS FOR BANNER =========================================================================================*/
+.search{width:1016px; height:150px;position:relative;}
+.search h1{margin:0; float:left; padding:50px 20px; color:#ff8b00; font-size:34px; text-transform:uppercase}
+.search .formsearch{position:absolute; top:50px; right:30px; width:485px; height:35px; border:#f6f7fb 3px solid;}
+.search .formsearch form{margin:0; padding:0; border:#c5ced7 1px solid;; width:483px; height:33px;}
+.search .formsearch form .keyword{border:0; width:382px; height:31px;color:#CCC;}
+.search .formsearch form .btnsearch{ width:100px; height:33px; font-size:15px; font-weight:bold; text-align:center; color:#fff; border:0;background:url(../images/btnut.jpg); position:absolute;cursor:pointer}
+
+
+
+/* CSS FOR LOGIN =============================================================================================*/
+.login{width:1016px; height:30px;}
+.login .boxlogin{width:468px; height:30px; float:left;border-top:0; background:#136eb4; position:relative; margin-left:10px; border-radius:10px}
+.login .boxlogin ul{padding:0; margin:0; float:left; position:absolute; left:0; top:-26px}
+.login .boxlogin ul li{list-style:none; float:left; margin-left:5px; background:url(../images/bgmenu.jpg); height:26px; ; border:#09F 1px solid; border-bottom:0; border-radius:10px 10px 0px 0px}
+.login .boxlogin ul li a{ float:left; padding:7px 15px; font-weight:bold; color:#FFF; text-decoration:none}
+.login .boxlogin ul li.selected{background:url(../images/bgmenu_ac.jpg)}
+.login .boxlogin ul li:hover>a{background:url(../images/bgmenu_ac.jpg)}
+.login .boxlogin form a{margin-left:20px; padding-left:30px; padding-top:7px;color:#fff; text-decoration:none; float:left;}
+
+/*CSS for boxleft ================================================================================= */
+.content{width:1000px; margin:0 auto;}
+.content .boxleft{margin:15px 0px; float:left; width:190px;}
+.content .boxcol{float:left; width:100%; margin-bottom:10px;}/*muốn tái sd sang cột bên phải*/
+.content .boxcol .boxhead{background:url(../images/dbg.jpg); height:23px; border:#8bb0ca 1px solid; border-top-left-radius:10px;border-top-right-radius:10px}
+.content .boxcol .boxhead p{margin:0px; padding:5px; color:#325b99; font-weight:bold; text-align:center}
+.content .boxcol .category{margin:0px; padding:0px; float:left; width:188px;
+ border:#97bbd1 1px solid; border-top:0; border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
+.content .boxcol .category li{width:186px; list-style:none; position:relative; float:left;}
+.content .boxcol .category li a{float:left; padding:5px 10px; text-decoration:none; color:#0085a4;}
+.content .boxcol .category li a.title{margin-top:5px}
+.content .boxcol .category li:hover>a{color:#F00}
+.content .boxcol .category li:hover{background:#f8f8f8}
+.content .boxleft .adv{margin-bottom:8px;width:190px; overflow:hidden; float:left}
+.content .boxleft .adv img{border:0;}
+/* CSS FOR boxcenter================================================================================ */
+.content .center{margin:10px 0px 0px 7px; width:604px; float:left}
+.content .center .banner{width:604px; height:220px; border:#8bb0ca 1px solid;padding:0;}
+#slide{width:604px; height:220px;position:relative; margin:0 auto}
+#slide ul{padding:0; margin:0;}
+#slide ul li{list-style:none}
+.slides-pagination{ position:absolute; top:20px; right:20px}
+.slides-pagination a{ float:left; padding:2px 7px; border:#0F3 1px solid; background:#FFF; text-decoration:none; font-weight:bold; margin-bottom:5px; color:#00F; border-radius:20px}
+.slides-pagination li.selected a{color:#F60; background:#FF3}
+
+.content .center .home{width:606px; float:left; padding-top:10px;}
+.content .center .home .home2{width:604px;background:#FFF; float:left; border:1px #8bb0ca solid;}
+.content .center .product{float:left; overflow:hidden; padding:0; margin:0; border-top:#ddd 1px solid;border-left:#ddd 1px solid;text-align:center;}
+.content .center .product li{float:left; list-style:none; overflow:hidden; width:200px; height:210px; border-bottom:#ddd 1px solid;border-right:#ddd 1px solid;}
+
+.content .center .product li img{margin-top:0px;}
+.content .center .product li img.sp{width:130px; height:130px;margin-top:10px; border:0px #CCCCCC solid; position:relative}
+.content .center .product li a.title{color:#06C; text-decoration:none; font-size:13px; font-weight:bold; padding-left:5px;}
+.content .center .product li .price{color:#F00; font-weight:bold; padding-left:5px}
+/* CSS FOR boxright ===================================================================================*/
+.content .boxright{margin:10px 0px 5px; float:right; width:190px;}
+.content .boxright .boxcol .categorys{margin:0px; padding:0px; float:left; width:188px; border:#97bbd1 1px solid; border-top:0; border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
+
+.content .boxright .boxcol .categorys li{width:186px; padding:10px 0px 0px 3px; list-style:none; position:relative; float:left; border-top:#CCC 1px solid}
+.content .boxright .boxcol .categorys li img{float:left; width:35px; height:30px;}
+.content .boxright .boxcol .categorys li .imgnews{float:left; width:35px; height:30px; padding-bottom:7px;padding-right:5px}
+.content .boxright .boxcol .categorys li a{float:left;width:140px; height:30px; text-decoration:none; color:#0085a4; overflow:hidden;}
+
+.content .boxright .boxcol .categorys li:hover>a{color:#F00}
+
+.total{font-weight:bold;color:#F00; padding-left:10px}
+/************************** css form *******************************/
+.text-input{border:#999 1px solid; border-radius:7px; height:25px; float:left; text-align:left;
+background:-webkit-gradient(linear,left top,left bottom,from(#E4E4E4),to(#fff));
+background:-moz-linear-gradient(top,#E4E4E4,#fff);
+background:-ms-linear-gradient(top,#E4E4E4,#fff);
+background:-o-linear-gradient(top,#E4E4E4,#fff);
+}
+.button-input{border:#136eb4 1px solid;
+color:#fff; font-weight:bold; 
+background:-webkit-gradient(linear,left top,right bottom,from(#136eb4),to(#09F));
+background:-moz-linear-gradient(top,#136eb4,#09F);
+background:-ms-linear-gradient(top,#136eb4,#09F);
+background:-o-linear-gradient(top,#136eb4,#09F);
+padding:3px 10px; border-radius:5px; cursor:pointer;text-shadow:1px 1px 2px #333;
+}
+.small-size{width:45%}
+.medium-size{width:75%}
+.tim{background:#F90; border:#F90 2px solid; color:#FFF; font-weight:bold}
+/* CSS FOR PAGE =====================================================================================*/
+.pageduoi{float:left;padding-top:10px;}
+.pageduoi a{color:#F00; border:#CCC 1px solid; padding:0px 5px 0px 5px; margin:0px 2px 5px 0px; float:left; text-decoration:none;}
+.pageduoi a.active{color:#00F}
+.pageright a{text-decoration:none;color:#F60; font-weight:bold; float:left;padding-left:5px;padding-bottom:5px}
+/* CSS rao vặt=============================== */ 
+#readmore{float:right;padding-right:5px}
+
+/* CSS FOR DANH SACH TIN ================================================================================*/
+.tintuc {width:100%;float:left; padding-bottom:10px; border-bottom:#CCC 1px solid}
+.tintuc img.image{float:left; width:100px; height:70px; padding-top:10px; padding-left:10px}
+.tintuc .right{width:480px; float:right ; padding-top:10px;}
+.tintuc .right .newshead{height:29px;font-size:14px; font-weight:bold; color:#0085a4; text-decoration:none;}
+.tintuc .right .date{float:right; color:#0085a4; padding-right:10px}
+.tintuc .right .newscontent{padding-right:10px}
+.tintuc .right .newscontent .xemtiep{color:#0085a4; font-size:12px}
+.tintuc .right .newscontent .iconxem{width:10px}
+
+/* CSS FOR CHI TIET TIN TUC ============================================================================*/
+.cttintuc {width:100%; float:left; border:#8bb0ca 1px solid}
+.cttintuc .newshead{padding:10px 0px 10px 20px; font-size:14px; font-weight:bold; color:#0085a4}
+.cttintuc .newscontent{color:#999;padding:5px}
+.txtbinhluan{width:90%; height:30px; float:left; color:#CCC}
+.btnbinhluan{width:8%; height:36px; float:left; background:#09F; border:0; color:#FFF}
+.tinkhac{width:100%; border-top:#CCC 1px solid; float:left; margin-top:20px}
+.tinkhac ul li a{ text-decoration:none; color:#999}
+.tinkhac .date{float:right; padding-right:20px; color:#999}
+
+
+.tensp{color:#0085a4; font-weight:bold; font-size:14px; padding-left:10px}
+.price{color:#F00; font-weight:bold; padding-left:10px}
+.imgspct{width:300px; padding-top:20px}
+.giohang{color:#F00; font-size:12px;}
+
+/* CSS FOR GIOHANG =====================================================================================*/
+
+.tbgiohang{border:#FFF 0px solid; text-align:center}
+.tbgiohang .tieude{color:#0085a4; font-weight:bold; text-align:center;}
+.tbgiohang tr{border-bottom:#CCC 1px solid}
+.tbgiohang td{border-right:#CCC 1px solid}
+.tbgiohang a{color:#00F; text-decoration:none}
+table tr td input{text-align:center}
+.gia{color:#F00}
+.btn1{background:#42a5e0; height:21px; border:0px; border-radius:15px; font-weight:bold; color:#FFF}
+span.update:hover>input.btn1{background:#fcab11}
+
+
+/* CSS FOR FOTTER =====================================================================================*/
+footer{width:100%; height:92px; margin:0px auto; background:url(../images/bgfooter.jpg); float:left; margin-top:10px}
+footer .boxfoot{width:1000px; margin:0px auto;}
+footer .boxfoot p{padding-left:10px; font-weight:bold; color:#FFF; text-align:center}
+
+/* CSS FOR Bảng cấu hình sp =====================================================================================*/
+table.chitiet{border-top:#CCC 1px solid;border-left:#CCC 1px solid;font-size:14px;margin-bottom:10px}
+tr.maukhac{background:#f7f7f7}
+td{border-right:#CCC 1px solid;border-bottom:#CCC 1px solid}
+.tbdangnhap tr{border:0}
+.tbdangnhap tr td{border:0}
+
+.tbdangnhap tr td.small-size{width:55%;}

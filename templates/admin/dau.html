@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BTL PHP</title>
+<link rel="stylesheet" type="text/css" href="../templates/admin/css/style.css">
+<link rel="stylesheet" type="text/css" href="../templates/admin/js/validationEngine.jquery.css"/> <!-- css check form -->
+<link rel="stylesheet" type="text/css" href="../templates/admin/css/jquery-ui.css">
+<!-- js phần check form -->
+<script src="../templates/admin/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../templates/admin/js/jquery.validationEngine.js" ></script>
+<script type="text/javascript" src="../templates/admin/js/jquery.validationEngine-vi.js" ></script>
+<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="../admin/ckeditor/config.js"></script>
+<link rel="stylesheet" type="text/css" href="../ckeditor/sample.css"/>
+<script type="text/javascript" src="../ckeditor/sample.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $("#form1").validationEngine({
+		validationEventTrigger:'keyup',
+		showOneMessage:true,
+		maxErrorsPerField:true,
+		promptPosition:'bottomRight'
+	});
+});
+</script>
+
+
+<script>
+		//Select ALL CHECKBOX
+		$(document).ready(function(e) {
+			//Tham chiếu đến Check box all: bắt sự kiện click chuột
+            $("#cball").click(function(e) {
+				//Lấy ra giá trị của thuộc tính checked
+                var stt=$(this).attr('checked');
+				//Kiểm tra biến stt: nếu bằng checked: thì tất cả form check sẽ đc đánh dấu
+				if(stt=='checked') $('input[type=checkbox]').attr('checked',true);
+				else  $('input[type=checkbox]').attr('checked',false);
+				
+            });
+        });
+</script>
+
+
+</head>
+<body>
+
+<div class="wapper">
+	<div class="bgshadow">
+    	<div class="search">
+    	<h1>Trang quản lý website</h1>
+        <div class="formsearch">
+        	<form name="form2" id="form2" method="post" action="">
+            	<input name="txttimten" type="text" class="keyword">
+                <input name="btntimkiem" type="submit" class="btnsearch" value="Tìm kiếm">
+            </form>
+        </div>
+    </div>
+   	<span style="font-weight:bold; padding-left:10px">Xin chào :</span>
+    <a href="#" style="color:#00F; text-decoration:none">{$info.taikhoan_hoten}</a>
+    <a href="index.php?out=1" style="color:#F00;text-decoration:none">[Đăng xuất]</a>
+    <!-- BOX LEFT -->
+    	<div class="content1">
+     		<div class="boxleft1">
+    			<!--Category-->
+    			<div class="boxcol1">
+        			<div class="boxhead1">
+            			<p>Quản trị</p>
+           		 	</div>
+        			<ul class="category1">
+                        <li>
+                        	<img src="../templates/admin/images/home.jpg" />
+                            <a href="index.php" class="title">Trang chủ</a> 
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/new.png" />
+                            <a href="?mod=news" class="title">Tin tức</a>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/pro.png" />
+                            <a href="?mod=sp" class="title">Sản phẩm</a>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/pro.png" />
+                            <a href="?mod=thongso" class="title">Thông số sản phẩm</a>
+                            <ul>
+                            	{foreach $danhsachtc as $item}
+                            	<li>
+                            	<a href="?mod=thongso&act=thongso&idloai={$item.loaithongso_id}" class="title">{$item.loaithongso_ten}</a>                   
+                        		</li>
+                                {/foreach}
+                            </ul>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/shop.jpg" />
+                            <a href="?mod=giohang" class="title">Giỏ hàng</a>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/nsx.png" />
+                            <a href="?mod=nsx" class="title">Nhà sản xuất</a>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/contact.png" />
+                            <a href="?mod=lienhe" class="title">Liên hệ</a>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/help.png" />
+                            <a href="?mod=pro&act=pronsx" class="title">Hỗ trợ</a>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/money.jpg" />
+                            <a href="?mod=revenue" class="title">Doanh thu</a>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/intro.jpg" />
+                            <a href="?mod=gioithieu" class="title">Giới thiệu</a>                   
+                        </li>
+                        <li>
+                        	<img src="../templates/admin/images/user.jpg" />
+                            <a href="?mod=taikhoan" class="title">Tài khoản</a>                   
+                        </li>
+                	</ul> 
+        		</div>
+			</div>
+            <div class="phai">
+            	<div class="boxcol1">
+        			<div class="boxhead1">
+            			<p>Nội dung quản trị</p>
+           		 	</div>
+        			<div class="noidungphai">

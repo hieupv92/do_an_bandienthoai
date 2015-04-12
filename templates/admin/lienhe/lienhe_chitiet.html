@@ -1,0 +1,32 @@
+<h1>Chi tiết liên hệ</h1>
+<a href="?mod=lienhe" style="color:#0085a4; font-weight:bold; padding-bottom:10px; float:left">Quay lại danh sách</a>
+<table width="100%" border="1" cellspacing="0" style="border:#CCC 1px solid; text-align:center">
+  <tr>
+    <td>ID</td>
+    <td>Tên</td>
+    <td>Địa chỉ</td>
+    <td>Điện thoại</td>
+    <td>Ngày gửi</td>
+    <td>Trạng thái</td>
+    <td>Thao tác</td>
+  </tr>
+  <tr>
+    <td>{$detail.lienhe_id}</td>
+    <td>{$detail.lienhe_ten}</td>
+    <td>{$detail.lienhe_diachi}</td>
+    <td>{$detail.lienhe_dienthoai}</td>
+    <td>{$detail.lienhe_ngaygui}</td>
+    <td><a onClick="if(confirm('Bạn có chắc chắn không?')) document.location='?mod=lienhe&id={$detail.lienhe_id}&tt={$detail.lienhe_trangthai}'" href="#">
+	{if $detail.lienhe_trangthai==1}
+    <img src='../templates/admin/images/yes.png' />
+    {else}
+    <img src='../templates/admin/images/contact.jpg' />
+    {/if}
+    </a>
+    </td>
+    <td><a href="?mod=lienhe&act=xoa&id={$detail.lienhe_id}"><img src="../templates/admin/images/delete.png" /></a></td>
+  </tr>
+  <tr>
+    <td colspan="7"><font color="#FF0000">Nội dung: </font>{$detail.lienhe_noidung}</td>
+  </tr>
+</table>

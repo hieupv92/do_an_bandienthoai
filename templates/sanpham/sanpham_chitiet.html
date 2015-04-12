@@ -1,0 +1,57 @@
+<div class="boxcol">
+	<div class="boxhead">
+	<p>Chi tiết sản phẩm</p>
+	</div>
+	<div class="home2" style="text-align:center">
+        <img src="{substr($chitiet.sanpham_link,3)}" class="imgspct" /><br />
+        <span class="tensp">{$chitiet.sanpham_ten}</span><br>
+        <span class="price">Giá : {$chitiet.sanpham_gia|number_format} VNĐ</span><br />
+        <a style="text-decoration:underline;cursor:pointer" onClick="#">
+		<a class="giohang" href="index.php?mod=giohang&id={$chitiet.sanpham_id}">Mua ngay</a>
+        {$chitiet.sanpham_chitiet}
+        <h2>Thông số sản phẩm</h2>
+        <table class="chitiet" width="75%" border="0" cellspacing="0" cellpadding="13" align="center">
+          <tr class="maukhac">
+            <td>Kiểu dáng</td>
+            <td>{$chitiet.kieudang}</td>
+          </tr>
+          <tr>
+            <td>Mức giá</td>
+            <td>{$chitiet.mucgia}</td>
+          </tr>
+          <tr class="maukhac">
+            <td>Hệ điều hành</td>
+            <td>{$chitiet.hedieuhanh}</td>
+          </tr>
+          <tr>
+            <td>Kích thước</td>
+            <td>{$chitiet.kichthuoc}</td>
+          </tr>
+          <tr class="maukhac">
+            <td>Tính năng</td>
+            <td>{$chitiet.tinhnang}</td>
+          </tr>
+          <tr>
+            <td>Card</td>
+            <td>{$chitiet.card}</td>
+          </tr>
+          <tr class="maukhac">
+            <td>Màn hinh</td>
+            <td>{$chitiet.manhinh}</td>
+          </tr>
+          <tr>
+            <td>Ram</td>
+            <td>{$chitiet.ram}</td>
+          </tr>
+          <tr class="maukhac">
+            <td>Ô cứng</td>
+            <td>{$chitiet.ocung}</td>
+          </tr>
+          <tr>
+            <td>Vi xử lý</td>
+            <td>{$chitiet.vixuly}</td>
+          </tr>
+        </table>
+
+	</div>
+</div>

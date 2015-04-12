@@ -1,0 +1,45 @@
+<div class="boxcol">
+	<div class="boxhead">
+		<p>Giỏ hàng</p>
+	</div>
+	<div class="home2">
+        <form name="form1" id="form1" method="post" action="index.php?mod=giohang"><td valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="5" class="tbgiohang">
+          <tr bgcolor="#d9f575" class="tieude">
+            <td>STT</td>
+            <td>Sản phẩm</td>
+            <td>Hình ảnh</td>
+            <td>Số lượng</td>
+            <td>Đơn giá</td>
+            <td>Thành tiền</td>
+            <td>&nbsp;</td>
+          </tr>
+          {$i=1}
+          {$tongtien=0}
+          {foreach $cart as $item}
+          {$id=$item[0]}
+          {$detail=$lib->selectone("SELECT * FROM tbsanpham WHERE sanpham_id=$id")}
+          {$tonggia=$detail.sanpham_gia*$item[1]}
+          {$tongtien=$tongtien+$tonggia}
+          <tr>
+            <td style="color:#999">{$i++}</td>
+            <td style="color:#0085a4">{$detail.sanpham_ten}</td>
+            <td><img src="{substr($detail.sanpham_link,3)}" width="60px" /></td>
+            <td><input type="text" value="{$item[1]}" name="sl{$item[0]}"  size="3" class="validate[custom[onlyNumberSp],min[1]]" /></td>
+            <td class="gia">{$detail.sanpham_gia|number_format} VND</td>
+            <td class="gia">{$tonggia|number_format} VND</td>
+            <td><a href="index.php?mod=giohang&xoa=true&id={$item[0]}">Xóa</a></td>
+          </tr>
+          {/foreach}
+          <tr>
+            <td colspan="7" align="right" style="border-top:#CCC 1px solid">
+            <a href="?mod=pro">Mua hàng tiếp</a> || <a href="?mod=giohang&act=info">Nhập thông tin khách hàng</a>
+            <span class="update"><input type="submit" name="btnupdate" id="btnupdate" class="btn1" value="Cập nhật"></span></td>
+            </tr>
+          <tr>
+            <td colspan="7" align="right" height="25"><b style="color:#6C0">Tổng tiền:{$tongtien|number_format}</b> <font style="font-weight:bold; color:#F00"> VNĐ</font></td>
+          </tr>
+	</table>
+        </form>
+	</div>
+</div>

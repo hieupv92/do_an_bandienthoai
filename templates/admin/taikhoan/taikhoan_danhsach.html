@@ -1,0 +1,63 @@
+
+<form id="form1" name="form1" method="post" action="?mod=taikhoan&act=xoa">
+<h1 align="center">Danh mục tài khoản</h1>
+<a href="?mod=taikhoan&act=them" class="them">Thêm mới tài khoản</a>
+<input type="submit" name="btnxoa" id="btnxoa" class="xoamucchon" value="Xóa mục chọn" onclick="return confirm('Bạn có chắc muốn xóa không?')" />
+<table width="100%" border="0" cellpadding="5" cellspacing="0" class="danhsach">
+  <tr class="tieude">
+    <td>ID</td>
+    <td>Tài khoản</td>
+    <td>Email</td>
+    <td>Họ tên</td>
+    <td>Điện thoại</td>
+    <td>Giới tính</td>
+    <td>Loại</td>
+    <td>Trạng thái</td>
+    <td width="80px">Thao tác</td>
+    <td>
+      <input type="checkbox" id="cball" />
+   </td>
+  </tr>
+ {foreach $danhsach as $item}
+  <tr>
+    <td>{$item.taikhoan_id}</td>
+    <td><span style="color:#00F">{$item.taikhoan_user}</span></td>
+    <td>{$item.taikhoan_email}</td>
+    <td>{$item.taikhoan_hoten}</td>
+    <td>{$item.taikhoan_phone}</td>
+    <td>
+    {if $item.taikhoan_gioitinh==1}
+    <img src="../templates/admin/images/male.png"  />
+    {else}
+    <img src="../templates/admin/images/female.png"  />
+    {/if}
+    </td>
+    <td>
+    {if $item.taikhoan_loai==1}
+	<span style="color:#00F">Quản trị</span>
+    {else}
+   	<span style="color:#F00">Người dùng</span>
+    {/if}
+    </td>
+   	<td>
+    	<a onclick="document.location='index.php?mod=taikhoan&id={$item.taikhoan_id}&tt={$item.taikhoan_trangthai}'" href="#">
+    	{if $item.taikhoan_trangthai==1}
+    	<img src="../templates/admin/images/yes.png"  />
+        {else}
+        <img src="../templates/admin/images/no.png"  />
+        {/if}
+    	</a>
+    </td>
+    <td>
+    	<a href="?mod=taikhoan&act=sua&id={$item.taikhoan_id}"><img src="../templates/admin/images/edit.png" /></a>
+    	<a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?mod=taikhoan&act=xoa&id={$item.taikhoan_id}"><img src="../templates/admin/images/delete.png" /></a><br />
+    	<a href="#" style="text-decoration:none;color:#F00">Đổi mật khẩu</a>
+    </td>
+    <td>
+      <input type="checkbox" name="cbxoa[]" value="{$item.taikhoan_id}">  
+    </td>
+  </tr>
+  {/foreach} 
+</table>
+</form>
+<div class="pageduoi">{$lib->viewpage('?mod=taikhoan&n=')}</div>

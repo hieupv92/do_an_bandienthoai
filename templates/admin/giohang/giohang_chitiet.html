@@ -1,0 +1,27 @@
+<h1>Chi tiết đơn hàng</h1>
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="danhsach">
+  <tr class="tieude">
+    <td>ID</td>
+    <td>Tên sản phẩm</td>
+    <td>Hình ảnh</td>
+    <td>Đơn giá</td>
+    <td>Số lượng</td>
+    <td>Thanh tiền</td>
+  </tr>
+  {$tongtien=0}
+  {foreach $danhsach as $item}
+  {$thanhtien=$item.donhang_giasanpham*$item.donhang_soluong}
+  {$tongtien=$tongtien+$thanhtien}
+  <tr>
+    <td>{$item.sanpham_id}</td>
+    <td>{$item.sanpham_ten}</td>
+    <td><img src="{$item.sanpham_link}" width="100px" /></td>
+    <td>{$item.donhang_giasanpham|number_format}</td>
+    <td>{$item.donhang_soluong}</td>
+    <td>{$thanhtien|number_format}</td>
+  </tr>
+  
+  {/foreach}
+</table>
+<div style="padding-left:10px; color:#66CC66; font-weight:bold; font-size:14px; float:left">Tổng tiền :</div>
+<div style="color:#F00; font-size:16px; font-weight:bold">{$tongtien|number_format} VNĐ </div>

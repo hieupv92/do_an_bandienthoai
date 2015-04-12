@@ -1,0 +1,33 @@
+<h1>Danh sách khách hàng</h1>
+<table width="100%" border="0" cellpadding="3" cellspacing="0" class="danhsach">
+  <tr class="tieude">
+    <td>ID</td>
+    <td>Tên khách hàng</td>
+    <td>Điện thoại</td>
+    <td>Địa chỉ nhận</td>
+    <td>Ngày mua</td>
+    <td>Trạng thái</td>
+    <td>Chi tiết</td>
+    <td>Xóa</td>
+  </tr>
+  {foreach $danhsach as $item}
+  <tr>
+    <td>{$item.khach_id}</td>
+    <td>{$item.khach_ten}</td>
+    <td>{$item.khach_dienthoai}</td>
+    <td>{$item.khach_diachinhan}</td>
+    <td>{$item.khach_ngaymua}</td>
+    <td><a onClick="document.location='?mod=giohang&id={$item.khach_id}&tt={$item.khach_trangthai}'" href="#">
+	{if $item.khach_trangthai==1}
+    <img src='../templates/admin/images/yes.png' />
+    {else}
+    <img src='../templates/admin/images/no.png' />
+    {/if}
+    </a>
+    </td>
+    <td><a href="?mod=giohang&act=chitiet&id={$item.khach_id}"><img src='../templates/admin/images/chitiet.jpg' style="padding-top:5px" /></a></td>
+    <td><a href="?mod=giohang&act=xoa&id={$item.khach_id}" onclick="return confirm('Bạn có muốn xóa không?')"><img src="../templates/admin/images/delete.png" /></a></td>
+  </tr>
+  {/foreach}
+</table>
+<div class="pageduoi">{$lib->viewpage('?mod=giohang&n=')}</div>

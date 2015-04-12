@@ -1,0 +1,23 @@
+<div class="boxcol">
+        <div class="boxhead">
+            <p>Danh mục tin tức</p>
+        </div>
+        
+        <div class="home2">
+        {foreach $tintuc as $item}
+        		<div class="tintuc">
+                    <div class="img">
+                        <img src="{substr($item.tintuc_link,3)}" class="image"/>
+                    </div>
+    
+                    <div class="right">
+                        <a class="newshead" href="index.php?mod=tintuc&act=chitiet&id={$item.tintuc_id}">{$item.tintuc_tieude}</a>
+                        <span class="date">{substr($item.tintuc_date,5,2)}/{substr($item.tintuc_date,0,4)}</span>
+                        <div class="newscontent">{$item.tintuc_tieude}<br>
+                        <img src="templates/images/icon-xemtiep.gif" class="iconxem" /><a href="#" class="xemtiep">Xem tiếp</a>
+                        </div>      
+                    </div>
+				</div>
+       {/foreach}
+       </div>
+</div> 

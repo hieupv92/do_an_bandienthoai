@@ -1,0 +1,90 @@
+</div>
+    </div>
+	<!-- BOX RIGHT --> 
+        <div class="boxright">
+        	<div class="boxcol">
+            	<div class="boxhead">
+                	<p>Giỏ hàng</p>
+                </div>
+                <div class="categorys">
+                <p class="total">Total:</p>
+					<!--<a href="index.php?mod=giohang"><img src="templates/images/shop.jpg" style="width:160px; padding-left:10px" /></a> -->
+                </div>
+			</div>
+        	<div class="boxcol">
+            	<div class="boxhead">
+                	<p>Tin tức mới nhất</p>
+                </div>
+                    <ul class="categorys">
+                    	{foreach $tinmoi as $item}
+                        
+                   		<li>
+                        <img src="{substr($item.tintuc_link,3)}" class="imgnews" />
+                        <a href="?mod=tintuc&act=chitiet&id={$item.tintuc_id}" class="title">{$item.tintuc_tieude}</a>
+                        </li>
+                        {/foreach}
+                	</ul> 
+                </div>
+                
+            <!--<div class="boxcol newscol">
+            	<div class="boxhead">
+                	<p>Rao vặt mới nhất</p>
+                </div>
+                    <ul class="categorys">
+                    	{foreach $raovatmoi as $item}
+            			<li><a href="#" class="img"><img  alt="{$item.raovat_tieude}" src="{$item.raovat_hinhanh}"  /></a><a href="#" class="titles">{$item.raovat_tieude}</a>
+                <br><span>Giá: {$item.raovat_gia|number_format} VND</span>
+                		</li>
+                		{/foreach}
+                	</ul>
+                    <p class="pageright"><a id="readagain">&laquo; Trước </a>
+            <a id="readmore">Tiếp &raquo;</a></p>
+            <script>
+			$(document).ready(function(e) {
+				var page=1;
+                $("#readmore").click(function(e) {
+					page++;
+					$('.newscol ul').html('<li style="text-align:center"><progress></progress></li>');
+                    $.get('ajraovat.php?n='+page,function(data){
+						$('.newscol ul').html(data);
+					});
+                });
+				 $("#readagain").click(function(e) {
+					page--;
+					$('.newscol ul').html('<li style="text-align:center"><progress></progress></li>');
+                    $.get('ajraovat.php?n='+page,function(data){
+						$('.newscol ul').html(data);
+					});
+                });
+				
+            });
+			</script> 
+                </div> -->
+            
+            
+            <div class="boxcol">
+            	<div class="boxhead">
+                	<p>Tổng đài tư vấn</p>
+                </div>
+                <div class="categorys" style="text-align:center; color:#0085a4">
+                 	<p>Hotline -> 01663809415</p>
+					<p>Hotline -> 01663809415</p>
+                    <p>Hotline -> 01663809415</p>
+                    <p>Hotline -> 01663809415</p>
+                    <p>Hotline -> 01663809415</p>
+				</div>
+			</div>
+        </div>
+	</div>
+    <!-- END BOX RIGHT -->
+    </div>
+</div>
+<footer>
+    	<div class="boxfoot">
+    <p>Địa chỉ:  269 Phố Xã Đàn (Kim Liên Mới) - Đống Đa - Hà nội Tel : (04) 3.557.3888</p>
+    <p>56 Phố Yên Lạc - Hai Bà Trưng - Hà nội Tel : (04) 3.974 11 66 ; 165C Xuân Thuỷ-Cầu Giấy-Hà Nội Tel: (04) 3 767 5388</p> 
+	<p>Copyright ©2004-2009 Dienthoai.com.vn  E-mail: info@dienthoai.com.vn</p>
+		</div>
+    </footer>>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<div class="boxcol">
+	<div class="boxhead">
+		<p>Liên hệ</p>
+	</div>
+	<div class="home2">
+        <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+          <h1 align="center">Thông tin liên hệ</h1>
+          <div style="color:#00F; padding-left:10px; font-size:14px;">{if isset($thongbao)}{$thongbao}{/if}</div>
+          <table width="100%" border="0" cellpadding="5" cellspacing="5">
+            <tr>
+              <td>Tên *</td>
+              <td><input type="text" name="txtten" class="text-input small-size validate[required]" {if isset($data.txtten)} value="{$data.txtten}" {/if}/></td>
+            </tr>
+            <tr>
+              <td>Địa chỉ</td>
+               <td><input type="text" name="txtdiachi" id="txtdiachi" class="text-input small-size validate[required,maxSize[32]]" {if isset($data.txtdiachi)} value="{$data.txtdiachi}" {/if}></td>
+            </tr>
+            <tr>
+              <td>Điện thoại *</td>
+              <td><input type="text" name="txtdienthoai" class="text-input small-size validate[required,custom[onlyNumberSp]]"
+              {if isset($data.txtdienthoai)} value="{$data.txtdienthoai}" {/if} /></td>
+            </tr>
+            <tr>
+              <td>Tin nhắn</td>
+              <td><textarea name="txtnoidung" cols="50" rows="10" id="Content" class="validate[required]">{if isset($data.txtdiachi)}{$data.txtdiachi}{/if}</textarea></td>
+            </tr>
+            <tr>
+                <td>Mã bảo mật</td>
+                <td><input name="txtser" type="text" id="txtser" size="5" class="text-input">
+        		<img src="control/capcha.php" id="capcha" alt="ser">
+        		<img src="templates/images/refresh.png" alt="refresh" id="rfimg" style="cursor:pointer" />
+       			 <script>
+        			$(document).ready(function(e) {
+            		$("#rfimg").click(function(e) {
+                	$("#capcha").attr('src','control/capcha.php');
+            		});
+        		});
+        		</script>
+                </td>
+			</tr
+            ><tr>
+              <td>&nbsp;</td>
+              <td><input type="submit" name="btnthem" value="Send" class="btn1" /></td>
+            </tr>
+          </table>
+        </form>
+	</div>
+</div>

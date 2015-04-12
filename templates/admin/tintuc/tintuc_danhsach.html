@@ -1,0 +1,40 @@
+
+<form id="form1" name="form1" method="post" action="?mod=news&act=xoa">
+<h1 align="center">Danh mục tin tức</h1>
+<a href="?mod=news&act=them" class="them">Thêm mới tin tức</a>
+<input type="submit" name="btnxoa" id="btnxoa" class="xoamucchon" value="Xóa mục chọn" onclick="return confirm('Bạn có chắc muốn xóa không?')" />
+<table width="100%" border="0" cellpadding="3" cellspacing="0" class="danhsach">
+  <tr class="tieude">
+    <td>ID</td>
+    <td>Tiêu đề</td>
+    <td>Hình ảnh</td>
+    <td>Trạng thái</td>
+    <td>Thao tác</td>
+    <td>
+      <input type="checkbox" id="cball" />
+   </td>
+  </tr>
+ {foreach $danhsach as $item}
+  <tr>
+    <td>{$item.tintuc_id}</td>
+    <td>{$item.tintuc_tieude}</td>
+    <td><img src="{$item.tintuc_link}" width="80px" style="margin-top:5px" /></td>
+   	<td>
+    	<a onclick="document.location='index.php?mod=news&id={$item.tintuc_id}&tt={$item.tintuc_trangthai}'" href="#">
+    	{if $item.tintuc_trangthai==1}
+    	<img src="../templates/admin/images/yes.png"  />
+        {else}
+        <img src="../templates/admin/images/no.png"  />
+        {/if}
+    	</a>
+    </td>
+    <td><a href="?mod=news&act=sua&id={$item.tintuc_id}"><img src="../templates/admin/images/edit.png" /></a>
+    <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?mod=news&act=xoa&id={$item.tintuc_id}"><img src="../templates/admin/images/delete.png" /></a></td>
+    <td>
+      <input type="checkbox" name="cbxoa[]" value="{$item.tintuc_id}">  
+    </td>
+  </tr>
+  {/foreach} 
+</table>
+</form>
+<div class="pageduoi">{$lib->viewpage('?mod=news&n=')}</div>

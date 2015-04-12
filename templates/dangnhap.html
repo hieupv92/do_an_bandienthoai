@@ -1,0 +1,34 @@
+<div class="boxcol">
+	<div class="boxhead">
+		<p>Đăng ký tài khoản</p>
+	</div>
+	<div class="home2">
+    
+		<form action="" method="post" name="form1" id="form2">
+        	<span style="color:#F00; font-weight:bold; padding:10px 0px 0px 10px;float:left">{if isset($thongbao)}
+{$thongbao}{/if}    		</span>
+            <h1 align="center">Đăng nhập tài khoản</h1>
+            <table width="80%" border="0" cellpadding="5" cellspacing="0" class="tbdangnhap" style=" text-align:center;border:0; margin:0px auto">
+              <tr>
+                <td width="20%">Tài khoản</td>
+                <td width="60%">
+                  <input type="text" name="txtuser" id="txtuser" class="text-input small-size validate[required,maxSize[32],custom[onlyLetterNumber]]" placeholder="Username">
+                </td>
+              </tr>
+              <tr>
+                <td>Mật khẩu</td>
+                <td><input type="password" name="txtpass" id="txtpass"
+                 class="text-input small-size validate[required,maxSize[32],custom[onlyLetterNumber]]" placeholder="Password">
+              					
+              <tr>
+                <td>&nbsp;</td>
+                <td style="float:left;text-align:left">
+                  <span class="update"><input type="submit" name="btndangnhap" id="btndangnhap" class="button-input" value="Đăng nhập"></span>
+                  <span class="update"><input type="reset" name="btnreset" id="btnreset" class="button-input" value="Nhập lại"></span>
+                </td>
+              </tr>
+            </table>
+		</form>
+       
+	</div>
+</div>

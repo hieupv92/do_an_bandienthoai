@@ -1,0 +1,16 @@
+<div class="cttintuc">
+      	<div class="newshead">{$chitiet.tintuc_tieude}</div>
+       	<div class="newscontent">
+		{$chitiet.tintuc_noidung}
+        </div>
+</div>
+<div class="tinkhac">
+	<h3>Các tin khác</h3>
+	<ul>
+    	{foreach $danhsach as $item}
+    	<li><a href="?mod=tintuc&act=chitiet&id={$item.tintuc_id}">{$item.tintuc_tieude}</a>
+        <span class="date">{substr($item.tintuc_date,5,2)}/{substr($item.tintuc_date,0,4)}</span>
+        </li>
+		{/foreach}
+    </ul>
+</div>

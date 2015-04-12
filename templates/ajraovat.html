@@ -1,0 +1,5 @@
+{foreach $raovatmoi as $item}
+<li><a href="#" class="img"><img  alt="{$item.raovat_tieude}" src="{$item.raovat_hinhanh}"  /></a><a href="#" class="title">{$item.raovat_tieude}</a>
+<br><span>Giá: {$item.raovat_gia|number_format} VND</span>
+</li>
+{/foreach}

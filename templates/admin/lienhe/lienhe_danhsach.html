@@ -1,0 +1,44 @@
+<h1 align="center">Danh sách liên hệ</h1>
+<form id="form1" name="form1" method="post" action="?mod=lienhe&act=xoa">
+<input type="submit" name="btnxoa" id="btnxoa" class="xoamucchon" value="Xóa mục chọn" 
+    onclick="return confirm('Bạn có chắc muốn xóa không?')"/>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" class="danhsach">
+  <tr class="tieude">
+    <td>ID</td>
+    <td>Tên</td>
+    <td>Địa chỉ</td>
+    <td>Điện thoại</td>
+    <td>Ngày gửi</td>
+    <td>Trạng thái</td>
+    <td>Thao tác</td>
+    <td>
+      <input type="checkbox" id="cball" />
+   </td>
+  </tr>
+  {foreach $danhsach as $item}
+  <tr>
+    <td>{$item.lienhe_id}</td>
+    <td>{$item.lienhe_ten}</td>
+    <td>{$item.lienhe_diachi}</td>
+    <td>{$item.lienhe_dienthoai}</td>
+    <td>{$item.lienhe_ngaygui}</td>
+    <td><a onClick="document.location='?mod=lienhe&id={$item.lienhe_id}&tt={$item.lienhe_trangthai}'" href="#">
+	{if $item.lienhe_trangthai==1}
+    <img src='../templates/admin/images/yes.png' />
+    {else}
+    <img src='../templates/admin/images/no.png' />
+    {/if}
+    </a>
+    </td>
+    <td>
+    <a href="?mod=lienhe&act=chitiet&id={$item.lienhe_id}"><img src="../templates/admin/images/read.png" /></a>
+    <a href="?mod=lienhe&act=xoa&id={$item.lienhe_id}"><img src="../templates/admin/images/delete.png" /></a>
+    </td>
+    <td>
+      <input type="checkbox" name="cbxoa[]" id="cbxoa" value="{$item.lienhe_id}">  
+    </td>
+  </tr>
+  {/foreach}
+</table>
+</form>
+<div class="pageduoi">{$lib->viewpage('?mod=lienhe&n=')}</div>

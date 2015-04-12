@@ -1,0 +1,20 @@
+<h2 style="padding-left:10px">{$detail1.loaithongso_ten}</h2>
+<form name="form1" id="form1" method="post" action="">
+  <table width="100%" border="0" cellspacing="5" cellpadding="5">
+    <tr>
+      <td>Tên thông số</td>
+      <td><input name="txtten" type="text" {if $id >0} value="{$detail.thongso_ten}" {/if}></td>
+    </tr>
+    <tr>
+     <td>Trạng thái</td>
+     <td>
+     	 <input type="radio" name="rdtrangthai" value="1" id="rdtrangthai_0" {if $id >0 && $detail.thongso_trangthai==1} checked {/if} />Hoạt động
+         <input type="radio" name="rdtrangthai" value="0" id="rdtrangthai_1" {if $id >0 && $detail.thongso_trangthai==0} checked {/if} />Khóa 	
+     </td>
+    </tr>
+     <tr>
+      <td>&nbsp;</td>
+      <td><input name="btnthem" class="btn1" type="submit" value="Thêm mới" /></td>
+    </tr>
+  </table>
+</form>

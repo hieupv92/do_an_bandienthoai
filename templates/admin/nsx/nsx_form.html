@@ -1,0 +1,39 @@
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <h1 align="center">Quản lý nhà sản xuất</h1>
+  <table width="391" border="0" align="center">
+    <tr>
+      <td width="81" align="center">Tên:</td>
+      <td width="310"><input type="text" name="txtten" class="validate[required]" {if $id>0} value="{$detail.nhasanxuat_ten}" {/if} /></td>
+    </tr>
+    <tr>
+      <td align="center">Địa chỉ:</td>
+      <td>
+    	<select name="sldiachi">
+    		<option value="">Vùi lòng chọn</option>
+          	{foreach $danhsach as $item}
+            <option value="{$item.diachi_ten}">{$item.diachi_ten}</option>
+           	{/foreach}
+    	</select>
+    </td>
+    </tr>
+    <tr>
+      <td align="center">Điện thoại:</td>
+      <td><input type="text" name="txtdienthoai" class="validate[required,custom[onlyNumberSp]]" {if $id>0} value="{$detail.nhasanxuat_dienthoai}" {/if} /></td>
+    </tr>
+    <tr>
+      <td align="center">Fax</td>
+      <td><input type="text" name="txtfax" class="validate[required,custom[onlyNumberSp]]" {if $id>0} value="{$detail.nhasanxuat_fax}" {/if} /></td>
+    </tr>
+    <tr>
+      <td align="center">&nbsp;</td>
+      <td>
+      {if $id>0}
+      	<input type="submit" name="btnthem" value="Cập nhật" class="btn1" />
+      {else}
+      	<input type="submit" name="btnthem" value="Thêm mới" class="btn1" />
+      {/if}
+        <input type="reset" name="btnre" value="Nhập lại" class="btn1" />
+      </td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,44 @@
+
+<form name="form1" id="form1" method="post" action="" enctype="multipart/form-data">
+<h1 align="center">Quản lý tin tức</h1>
+  <table width="100%" border="0" cellspacing="5" cellpadding="0">
+    <tr>
+      <td>Tiêu đề</td>
+      <td><textarea name="txttieude" id="txttieude" cols="65" rows="3" class="validate[required]">{if $id>0}{$detail.tintuc_tieude} {/if}</textarea></td>
+    </tr>
+    <tr>
+      <td>Tóm tắt</td>
+      <td><textarea name="txttomtat" id="txttomtat" cols="65" rows="5" class="validate[required]">{if $id>0}{$detail.tintuc_tomtat}{/if}</textarea></td>
+    </tr>
+    <tr>
+      <td>Nội dung</td>
+      <td><textarea name="txtnoidung" id="txtnoidung" class="ckeditor">{if $id>0}{$detail.tintuc_noidung}{/if}</textarea></td>
+    </tr>
+    <tr>
+      <td>Trạng thái</td>
+      <td>
+          <input type="radio" name="rdtrangthai" value="1" id="RadioGroup1_0" {if $id>0 && $detail.tintuc_trangthai==1} checked {/if} />Hoạt động
+       
+          <input type="radio" name="rdtrangthai" value="0" id="RadioGroup1_1" {if $id>0 && $detail.tintuc_trangthai==0} checked {/if} />Khóa
+      </td>
+    </tr>
+    <tr>
+      <td>Hình ảnh
+      {if $id>0}</br><img src="{$detail.tintuc_link}" width="100" /></td>{/if}
+      <td>
+      <input name="anh" type="file" id="anh" />
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+      		{if $id>0}
+            <input name="btnthem" type="submit" value="Cập nhật" class="btn1">
+            {else}
+            <input name="btnthem" type="submit" value="Thêm mới" class="btn1">
+            {/if}
+            <input name="btnnhaplai" type="reset" value="Nhập lại" class="btn1">
+      </td>
+    </tr>
+  </table>
+</form>

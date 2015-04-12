@@ -1,0 +1,167 @@
+<form name="form1" id="form1" method="post" action="" enctype="multipart/form-data">
+<h1 align="center">Quản lý sản phẩm</h1>
+  <table width="100%" border="0" cellspacing="5" cellpadding="5">
+    <tr>
+      <td>Tên</td>
+      <td><input name="txtten" type="text" class="validate[required]" {if $id>0} value="{$detail.sanpham_ten}" {/if}></td>
+    </tr>
+    <tr>
+      <td>Số lượng</td>
+      <td><input name="txtsoluong" type="text" class="validate[required,custom[onlyNumberSp]]" {if $id>0} value="{$detail.sanpham_soluong}" {/if}></td>
+    </tr>
+    <tr>
+      <td>Chi tiết</td>
+      <td><textarea name="txtnoidung" id="txtnoidung" class="ckeditor">{if $id>0}{$detail.sanpham_chitiet}{/if}</textarea></td>
+    </tr>
+    <tr>
+      <td>Giá</td>
+      <td><input name="txtgia" type="text" class="validate[required,custom[onlyNumberSp]]" {if $id>0} value="{$detail.sanpham_gia}" {/if}></td>
+    </tr>
+    <tr>
+      <td>Mức giá</td>
+      <td>
+      	<select name="slmucgia">
+        	<option value="">Mức giá</option>
+            {foreach $mucgia as $mg}
+            <option value="{$mg.thongso_id}" {if $id>0 && $detail.sanpham_mucgia==$mg.thongso_id}selected{/if}>{$mg.thongso_ten}</option>
+            {/foreach}
+        </select>	
+      </td>
+    </tr>
+    <tr>
+      <td>Hãng sản xuất</td>
+      <td>
+      	<select name="slnsx">
+        	<option value="">Hãng sản xuất</option>
+            {foreach $nsx as $hang}
+            <option value="{$hang.nhasanxuat_id}" {if $id>0 && $detail.sanpham_nhasanxuat==$hang.nhasanxuat_id}selected{/if}>{$hang.nhasanxuat_ten}</option>
+            {/foreach}
+        </select>	
+      </td>
+    </tr>
+    <tr>
+      <td>Kiểu dáng</td>
+      <td>
+      	<select name="slkieudang">
+        	<option value="">Kiểu dáng</option>
+            {foreach $kieudang as $kd}
+            <option value="{$kd.thongso_id}" {if $id>0 && $detail.sanpham_kieudang==$kd.thongso_id}selected{/if}>{$kd.thongso_ten}</option>
+            {/foreach}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Hệ điều hành</td>
+      <td>
+      	<select name="slhdh">
+        	<option value="">Hệ điều hành</option>
+            {foreach $hedieuhanh as $hdh}
+            <option value="{$hdh.thongso_id}" {if $id>0 && $detail.sanpham_hedieuhanh==$hdh.thongso_id}selected{/if}>{$hdh.thongso_ten}</option>
+            {/foreach}
+        </select>	
+      </td>
+    </tr>
+    <tr>
+      <td>Kích thước</td>
+      <td>
+      	<select name="slkichthuoc">
+        	<option value="">Kích thước</option>
+            {foreach $kichthuoc as $kt}
+            <option value="{$kt.thongso_id}" {if $id>0 && $detail.sanpham_kichthuoc==$kt.thongso_id}selected{/if}>{$kt.thongso_ten}</option>
+            {/foreach}
+        </select>	
+      </td>
+    </tr>
+    <tr>
+      <td>Tính năng</td>
+      <td>
+      	<select name="sltinhnang">
+        	<option value="">Tính năng</option>
+            {foreach $tinhnang as $tn}
+            <option value="{$tn.thongso_id}" {if $id>0 && $detail.sanpham_tinhnang==$tn.thongso_id}selected{/if}>{$tn.thongso_ten}</option>
+            {/foreach}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Card đồ họa</td>
+      <td>
+      	<select name="slcard">
+        	<option value="">Card đồ họa</option>
+            {foreach $card as $ca}
+            <option value="{$ca.thongso_id}" {if $id>0 && $detail.sanpham_card==$ca.thongso_id}selected{/if}>{$ca.thongso_ten}</option>
+            {/foreach}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Màn hình</td>
+      <td>
+      	<select name="slmanhinh">
+        	<option value="">Màn hình</option>
+            {foreach $manhinh as $mh}
+            <option value="{$mh.thongso_id}" {if $id>0 && $detail.sanpham_manhinh==$mh.thongso_id}selected{/if}>{$mh.thongso_ten}</option>
+            {/foreach}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Ram</td>
+      <td>
+      	<select name="slram">
+        	<option value="">Ram</option>
+            {foreach $ram as $ra}
+            <option value="{$ra.thongso_id}" {if $id>0 && $detail.sanpham_ram==$ra.thongso_id}selected{/if}>{$ra.thongso_ten}</option>
+            {/foreach}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Dung lượng ổ cứng</td>
+      <td>
+      	<select name="slocung">
+        	<option value="">Dung lượng ổ cứng</option>
+            {foreach $ocung as $oc}
+            <option value="{$oc.thongso_id}" {if $id>0 && $detail.sanpham_ocung==$oc.thongso_id}selected{/if}>{$oc.thongso_ten}</option>
+            {/foreach}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Bộ vi xử lý</td>
+      <td>
+      	<select name="slvixuly">
+        	<option value="">Bộ vi xử lý</option>
+            {foreach $vixuly as $vi}
+            <option value="{$vi.thongso_id}" {if $id>0 && $detail.sanpham_vixuly==$vi.thongso_id}selected{/if}>{$vi.thongso_ten}</option>
+            {/foreach}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Trạng thái</td>
+      <td>
+          <input type="radio" name="rdtrangthai" value="1" id="RadioGroup1_0" {if $id>0 && $detail.sanpham_trangthai==1} checked {/if} />Hoạt động
+       
+          <input type="radio" name="rdtrangthai" value="0" id="RadioGroup1_1" {if $id>0 && $detail.sanpham_trangthai==0} checked {/if} />Khóa
+      </td>
+    </tr>
+    <tr>
+      <td>Hình ảnh<br />
+      	{if $id>0}<img src="{$detail.sanpham_link}" width="100px" />{/if}
+      </td>
+      <td><input name="anh" type="file" id="anh" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+      		{if $id>0}
+            <input name="btnthem" type="submit" value="Cập nhật" class="btn1">
+            {else}
+            <input name="btnthem" type="submit" value="Thêm mới" class="btn1">
+            {/if}
+            <input name="btnnhaplai" type="reset" value="Nhập lại" class="btn1">
+      </td>
+    </tr>
+  </table>
+</form>

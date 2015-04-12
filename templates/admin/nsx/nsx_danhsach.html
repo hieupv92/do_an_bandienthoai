@@ -1,0 +1,32 @@
+
+<h1 align="center">Danh mục nhà sản xuất</h1>
+<a href="?mod=nsx&act=them" class="them">Thêm mới nhà sản xuất</a>
+<form name="form1" id="form1" method="post" action="?mod=nsx&act=xoa">
+<input type="submit" name="btnxoa" id="btnxoa" class="xoamucchon" value="Xóa mục chọn" 
+    onclick="return confirm('Bạn có chắc muốn xóa không?')"/>
+<table width="100%" border="0" cellpadding="3" cellspacing="0" class="danhsach">
+  <tr class="tieude">
+    <td>ID</td>
+    <td>Tên</td>
+    <td>Địa chỉ</td>
+    <td>Điện thoại</td>
+    <td>Fax</td>
+    <td>Thao tác</td>
+    <td><input type="checkbox" name="cball" id="cball"  /></td>
+  </tr>
+  {foreach $danhsach as $item}
+  <tr>
+    <td>{$item.nhasanxuat_id}</td>
+    <td>{$item.nhasanxuat_ten}</td>
+    <td>{$item.nhasanxuat_diachi}</td>
+    <td>{$item.nhasanxuat_dienthoai}</td>
+    <td>{$item.nhasanxuat_fax}</td>
+    <td class="suaxoa">
+        <a href="?mod=nsx&act=sua&id={$item.nhasanxuat_id}"><img src="../templates/admin/images/edit.png" /></a></a>
+        <a href="?mod=nsx&act=xoa&id={$item.nhasanxuat_id}"><img src="../templates/admin/images/delete.png" /></a>
+    </td>
+    <td><input type="checkbox" name="cbxoa[]" id="cbxoa" value="{$item.nhasanxuat_id}" /></td>
+  </tr>
+  {/foreach}
+</table>
+</form>

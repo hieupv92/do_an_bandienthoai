@@ -1,0 +1,45 @@
+<form id="form1" name="form1" method="post" action="?mod=sp&act=xoa">
+<h1 align="center">Danh sách sản phẩm</h1>
+<a href="?mod=sp&act=them" class="them">Thêm mới sản phẩm</a>
+<input type="submit" name="btnxoa" id="btnxoa" class="xoamucchon" value="Xóa mục chọn" onclick="return confirm('Bạn có chắc muốn xóa không?')" />
+<table width="100%" border="0" cellspacing="0" class="danhsach">
+  <tr class="tieude">
+    <td>ID</td>
+    <td>Tên</td>
+    <td>Hình ảnh</td>
+    <td>Giá</td>
+    <td>Số lượng</td>
+    <td>Trạng thái</td>
+    <td>Thao tác</td>
+    <td>
+      <input type="checkbox" id="cball" />
+   	</td>
+  </tr>
+  {foreach $danhsachsp as $item}
+  <tr>
+    <td>{$item.sanpham_id}</td>
+    <td>{$item.sanpham_ten}</td>
+    <td><img src="{$item.sanpham_link}" width="100px" /></td>
+    <td>{$item.sanpham_gia|number_format}</td>
+    <td>{$item.sanpham_soluong}</td>
+    <td>
+	<a onClick="document.location='?mod=sp&id={$item.sanpham_id}&tt={$item.sanpham_trangthai}'" href="#">
+	{if $item.sanpham_trangthai==1}
+    <img src='../templates/admin/images/yes.png' />
+    {else}
+    <img src='../templates/admin/images/no.png' />
+    {/if}
+    </a>
+    </td>
+    <td>
+    	<a href="?mod=sp&act=sua&id={$item.sanpham_id}"><img src="../templates/admin/images/edit.png" /></a>
+        <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?mod=sp&act=xoa&id={$item.sanpham_id}"><img src="../templates/admin/images/delete.png" /></a>
+    </td>
+   	<td>
+      <input type="checkbox" name="cbxoa[]" id="cbxoa" value="{$item.sanpham_id}">  
+    </td>
+  </tr>
+  {/foreach}
+</table>
+</form>
+<div class="pageduoi">{$lib->viewpage('?mod=sp&n=')}</div>

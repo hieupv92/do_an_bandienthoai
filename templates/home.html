@@ -1,0 +1,19 @@
+        <div class="boxcol">
+            	<div class="boxhead">
+                	<p>Sản phẩm tiêu biểu</p>
+                </div>
+				<div class="home2">
+  			<ul class="product">
+            {foreach $sanphamtb as $item}
+            <li>    	
+                <a href="#">
+                    <img src="{substr($item.sanpham_link,3)}" class="sp" />
+                </a><br>
+                <a href="index.php?mod=sp&act=chitiet&id={$item.sanpham_id}" class="title">{$item.sanpham_ten}</a><br>
+                <span class="price">Giá: {$item.sanpham_gia|number_format} VNĐ</span>
+                <div style="padding-top:5px"><a href="index.php?mod=giohang&id={$item.sanpham_id}"  class="giohang">Đặt mua</a></div>
+            </li>
+            {/foreach}
+            </ul>
+				</div>
+		</div>
